@@ -1,0 +1,35 @@
+{
+  "name": "ces-academy",
+  "version": "1.1.0",
+  "description": "Đăng sách đã viết xong (file PDF, ảnh bìa, video giới thiệu) lên thư viện CES Academy. Không viết sách.",
+  "author": {
+    "name": "CES Global"
+  },
+  "homepage": "https://academy.cesglobal.com.vn",
+  "keywords": ["ces-academy", "ebook", "publishing", "mcp"],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Khóa MCP",
+      "description": "Khóa bắt đầu bằng cesak_, tạo ở trang quản trị CES Academy > Kết nối MCP. Khóa chỉ hiện một lần lúc tạo.",
+      "sensitive": true,
+      "required": true
+    },
+    "api_url": {
+      "type": "string",
+      "title": "Địa chỉ API của CES",
+      "description": "Để nguyên mặc định. Chỉ đổi khi chạy thử trên máy chủ khác.",
+      "default": "https://lms-api.cesglobal.com.vn/api"
+    }
+  },
+  "mcpServers": {
+    "ces-academy": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/dist/ces-academy-mcp.mjs"],
+      "env": {
+        "CES_ACADEMY_API_KEY": "${user_config.api_key}",
+        "CES_ACADEMY_API_URL": "${user_config.api_url}"
+      }
+    }
+  }
+}

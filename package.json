@@ -1,0 +1,28 @@
+{
+  "name": "ces-academy-mcp",
+  "version": "1.1.0",
+  "description": "MCP server cho Claude: đăng sách (PDF, ảnh bìa, video giới thiệu) lên CES Academy",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.7",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ces-academy-mcp": "plugins/ces-academy/dist/ces-academy-mcp.mjs"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build-single-file-bundle.mjs",
+    "release-to-academy": "node scripts/copy-bundle-to-academy.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "~22.20.5",
+    "esbuild": "^0.28.2",
+    "typescript": "~5.9.3"
+  }
+}

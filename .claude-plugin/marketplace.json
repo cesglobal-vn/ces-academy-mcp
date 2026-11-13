@@ -1,0 +1,17 @@
+{
+  "name": "ces-global",
+  "owner": {
+    "name": "CES Global"
+  },
+  "metadata": {
+    "description": "Plugin Claude Code nội bộ của CES Global"
+  },
+  "plugins": [
+    {
+      "name": "ces-academy",
+      "source": "./plugins/ces-academy",
+      "description": "Đăng sách đã viết xong (PDF, ảnh bìa, video giới thiệu) lên CES Academy",
+      "category": "productivity"
+    }
+  ]
+}

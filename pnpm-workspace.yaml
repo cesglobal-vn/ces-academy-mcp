@@ -1,0 +1,6 @@
+minimumReleaseAge: 1440        # 24h delay before installing newly published versions
+strictPeerDependencies: false  # unmet peer ranges warn instead of failing
+audit:
+  level: moderate              # pnpm audit flags moderate+ severity
+allowBuilds:
+  esbuild: true
